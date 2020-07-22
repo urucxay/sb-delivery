@@ -1,2 +1,2 @@
 rootProject.name = "SB Delivery"
-include ':app'
+include (":app")
