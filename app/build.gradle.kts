@@ -35,6 +35,10 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    androidExtensions {
+        isExperimental = true
+    }
 }
 
 dependencies {
@@ -50,6 +54,7 @@ dependencies {
     val glide = "4.11.0"
     val koin = "2.0.1"
     val retrofit = "2.9.0"
+    val moshi = "1.9.3"
     val preferences = "1.1.1"
     val room = "2.2.5"
     val timber = "4.7.1"
@@ -98,10 +103,13 @@ dependencies {
     //Room
     implementation("androidx.room:room-runtime:$room")
     implementation("androidx.room:room-ktx:$room")
-    annotationProcessor("androidx.room:room-compiler:$room")
+    kapt("androidx.room:room-compiler:$room")
 
     //Network
     implementation("com.squareup.retrofit2:retrofit:$retrofit")
+    implementation("com.squareup.retrofit2:converter-moshi:$retrofit")
+    implementation("com.squareup.moshi:moshi-kotlin:$moshi")
+    kapt("com.squareup.moshi:moshi-kotlin-codegen:$moshi")
 
     //Timber
     implementation("com.jakewharton.timber:timber:$timber")
