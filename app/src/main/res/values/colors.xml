@@ -7,14 +7,17 @@
     <color name="color_secondary">#FF6F14</color>
     <color name="color_secondary_variant">#C43E00</color>
     <color name="color_on_secondary">#FFFFFF</color>
-    <color name="color_error_">#F44336</color>
+    <color name="color_error">#F44336</color>
     <color name="color_on_error">#FFFFFF</color>
-    <color name="color_surface_">#FFFFFF</color>
-    <color name="color_on_surface">#212121</color>
-    <color name="color_background_">#1A1A21</color>
+    <color name="color_surface">#FFFFFF</color>
+    <color name="color_on_surface">#000000</color>
+    <color name="color_background">#1A1A21</color>
     <color name="color_on_background">#FFFFFF</color>
 
     <color name="color_black">#000000</color>
     <color name="color_white">#FFFFFF</color>
+    <color name="color_gray">#A6A6B2</color>
+
+    <color name="color_stroke">#60000000</color>
 
 </resources>
