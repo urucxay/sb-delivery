@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">SB Delivery</string>
+    <string name="send_review">Отправить отзыв</string>
+    <string name="enter_review">Введите отзыв</string>
+    <string name="send">Отправить</string>
+    <string name="title_main">Главная</string>
 </resources>
