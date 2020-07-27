@@ -4,4 +4,8 @@
     <string name="enter_review">Введите отзыв</string>
     <string name="send">Отправить</string>
     <string name="title_main">Главная</string>
+    <string name="promotion">АКЦИЯ</string>
+    <string name="dish_image">dish image</string>
+    <string name="like_button">like button</string>
+    <string name="add_dish_to_cart_button">add dish to cart button</string>
 </resources>
