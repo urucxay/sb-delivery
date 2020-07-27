@@ -42,17 +42,17 @@ android {
 }
 
 dependencies {
-
     //Versions
     val kotlin = "1.3.72"
-    val constraint = "1.1.3"
+    val constraint = "2.0.0-beta8"
     val liveData = "2.2.0"
-    val material = "1.3.0-alpha01"
+    val material = "1.1.0"
     val navigation = "2.3.0"
     val paging = "2.1.2"
     val coroutines = "1.3.4"
     val glide = "4.11.0"
     val koin = "2.0.1"
+    val loggingInterceptor = "4.8.0"
     val retrofit = "2.9.0"
     val moshi = "1.9.3"
     val preferences = "1.1.1"
@@ -64,11 +64,13 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib:$kotlin")
     implementation("androidx.core:core-ktx:1.3.0")
     implementation("androidx.appcompat:appcompat:1.1.0")
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
 
     //Constraint
     implementation("androidx.constraintlayout:constraintlayout:$constraint")
 
     //LiveData
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$liveData")
     implementation("androidx.lifecycle:lifecycle-extensions:$liveData")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$liveData")
 
@@ -106,6 +108,7 @@ dependencies {
     kapt("androidx.room:room-compiler:$room")
 
     //Network
+    implementation("com.squareup.okhttp3:logging-interceptor:$loggingInterceptor")
     implementation("com.squareup.retrofit2:retrofit:$retrofit")
     implementation("com.squareup.retrofit2:converter-moshi:$retrofit")
     implementation("com.squareup.moshi:moshi-kotlin:$moshi")
