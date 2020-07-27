@@ -14,7 +14,7 @@
         <item name="android:colorBackground">@color/color_background</item>
         <item name="colorOnBackground">@color/color_on_background</item>
         <item name="android:statusBarColor">@color/color_primary</item>
-        <item name="android:fontFamily">@font/font_roboto</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
 
     </style>
