@@ -58,6 +58,8 @@ dependencies {
     val preferences = "1.1.1"
     val room = "2.2.5"
     val timber = "4.7.1"
+    val materialDrawer = "8.1.3"
+    val annotation = "1.1.0"
 
     //Core
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
@@ -116,6 +118,11 @@ dependencies {
 
     //Timber
     implementation("com.jakewharton.timber:timber:$timber")
+
+    //MaterialDrawer
+    implementation("com.mikepenz:materialdrawer:$materialDrawer")
+    implementation("com.mikepenz:materialdrawer-nav:$materialDrawer")
+    implementation("androidx.annotation:annotation:$annotation")
 
     //Test
     testImplementation("junit:junit:4.13")
