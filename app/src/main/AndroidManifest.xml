@@ -14,7 +14,7 @@
         android:theme="@style/Theme.SBDelivery">
 
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".ui.RootActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
