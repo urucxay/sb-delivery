@@ -36,13 +36,36 @@
 
     </LinearLayout>
 
-    <com.google.android.material.navigation.NavigationView
+<!--    <com.google.android.material.navigation.NavigationView-->
+<!--        android:id="@+id/navView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_gravity="start"-->
+<!--        app:headerLayout="@layout/nav_drawer_header"-->
+<!--        android:background="@color/color_primary"-->
+<!--        android:fitsSystemWindows="true"-->
+<!--        app:itemIconTint="@color/color_secondary"-->
+<!--        app:itemTextColor="@color/color_on_primary"-->
+<!--        app:menu="@menu/drawer_menu">-->
+
+<!--        <TextView-->
+<!--            android:layout_gravity="bottom"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textColor="@color/color_on_primary"-->
+<!--            android:drawableEnd="@drawable/ic_about"-->
+<!--            android:drawableStart="@drawable/ic_notification"-->
+<!--            android:drawablePadding="16dp"-->
+<!--            android:layout_margin="20dp"-->
+<!--            android:text="@string/drawer_title_about"/>-->
+
+<!--    </com.google.android.material.navigation.NavigationView>-->
+
+    <com.mikepenz.materialdrawer.widget.MaterialDrawerSliderView
         android:id="@+id/navView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:headerLayout="@layout/nav_drawer_header"
-        android:background="@color/color_primary"
         android:fitsSystemWindows="true" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -16,6 +16,8 @@
         <item name="android:statusBarColor">@color/color_primary</item>
         <item name="android:fontFamily">sans-serif-medium</item>
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <item name="materialDrawerStyle">@style/MaterialDrawerStyle</item>
+        <item name="materialDrawerHeaderStyle">@style/Widget.MaterialDrawerHeaderStyle</item>
 
     </style>
 
@@ -44,6 +46,15 @@
 
     <style name="DrawerArrowStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
         <item name="color">@color/color_secondary</item>
+    </style>
+
+    <style name="MaterialDrawerStyle" parent="Widget.MaterialDrawerStyle">
+        <item name="materialDrawerBackground">@color/color_primary</item>
+        <item name="materialDrawerPrimaryText">@color/color_on_primary</item>
+        <item name="materialDrawerPrimaryIcon">@color/color_secondary</item>
+        <item name="materialDrawerSecondaryText">@color/color_on_primary</item>
+        <item name="materialDrawerSecondaryIcon">@color/color_secondary</item>
+        <item name="materialDrawerSelectedBackgroundColor">@color/color_on_primary</item>
     </style>
 
 </resources>

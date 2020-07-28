@@ -3,11 +3,54 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/homeDestination">
 
     <fragment
-        android:id="@+id/mainFragment"
-        android:name="ru.skillbranch.sbdelivery.ui.main.MainFragment"
-        android:label="@string/title_main"
-        tools:layout="@layout/fragment_main" />
+        android:id="@+id/homeDestination"
+        android:name="ru.skillbranch.sbdelivery.ui.home.HomeFragment"
+        android:label="@string/drawer_title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/menuDestination"
+        android:name="ru.skillbranch.sbdelivery.ui.menu.MenuFragment"
+        android:label="@string/drawer_title_menu"
+        tools:layout="@layout/fragment_menu" />
+
+    <fragment
+        android:id="@+id/aboutDestination"
+        android:name="ru.skillbranch.sbdelivery.ui.about.AboutFragment"
+        android:label="@string/drawer_title_about"
+        tools:layout="@layout/fragment_about" />
+
+    <fragment
+        android:id="@+id/cartDestination"
+        android:name="ru.skillbranch.sbdelivery.ui.cart.CartFragment"
+        android:label="@string/drawer_title_cart"
+        tools:layout="@layout/fragment_cart" />
+
+    <fragment
+        android:id="@+id/favoriteDestination"
+        android:name="ru.skillbranch.sbdelivery.ui.favorite.FavoriteFragment"
+        android:label="@string/drawer_title_favorite"
+        tools:layout="@layout/fragment_favorite" />
+
+    <fragment
+        android:id="@+id/notificationDestination"
+        android:name="ru.skillbranch.sbdelivery.ui.notifications.NotificationsFragment"
+        android:label="@string/drawer_title_notifications"
+        tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/ordersDestination"
+        android:name="ru.skillbranch.sbdelivery.ui.orders.OrdersFragment"
+        android:label="@string/drawer_title_orders"
+        tools:layout="@layout/fragment_orders" />
+
+    <fragment
+        android:id="@+id/profileDestination"
+        android:name="ru.skillbranch.sbdelivery.ui.profile.ProfileFragment"
+        android:label="@string/drawer_title_profile"
+        tools:layout="@layout/fragment_profile" />
+
 </navigation>
