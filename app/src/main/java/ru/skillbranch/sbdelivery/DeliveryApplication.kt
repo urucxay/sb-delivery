@@ -16,7 +16,7 @@ class DeliveryApplication : Application() {
     }
 
     private fun initLogger() {
-        Timber.plant(Timber.DebugTree())
+        if (BuildConfig.DEBUG) Timber.plant(Timber.DebugTree())
     }
 
     private fun initKoin() {
