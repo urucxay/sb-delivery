@@ -3,9 +3,19 @@
     <string name="send_review">Отправить отзыв</string>
     <string name="enter_review">Введите отзыв</string>
     <string name="send">Отправить</string>
-    <string name="title_main">Главная</string>
+    <string name="title_home">Главная</string>
     <string name="promotion">АКЦИЯ</string>
     <string name="dish_image">dish image</string>
     <string name="like_button">like button</string>
     <string name="add_dish_to_cart_button">add dish to cart button</string>
+    <string name="close_dialog">close dialog</string>
+    <string name="drawer_title_home">Главная</string>
+    <string name="drawer_title_menu">Меню</string>
+    <string name="drawer_title_favorite">Избранное</string>
+    <string name="drawer_title_cart">Корзина</string>
+    <string name="drawer_title_profile">Профиль</string>
+    <string name="drawer_title_orders">Заказы</string>
+    <string name="drawer_title_notifications">Уведомления</string>
+    <string name="drawer_title_about">О приложении</string>
+    <string name="header_background">header background</string>
 </resources>
