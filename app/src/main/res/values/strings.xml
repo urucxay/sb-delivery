@@ -18,4 +18,11 @@
     <string name="drawer_title_notifications">Уведомления</string>
     <string name="drawer_title_about">О приложении</string>
     <string name="header_background">header background</string>
+    <string name="image_with_logo">image with logo</string>
+    <string name="title_reccomend">Рекомендуем</string>
+    <string name="see_all">См. все</string>
+    <string name="title_best">Лучшее</string>
+    <string name="title_popular">Популярное</string>
+
+    <string name="price">%s ₽</string>
 </resources>

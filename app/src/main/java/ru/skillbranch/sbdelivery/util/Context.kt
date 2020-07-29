@@ -1,10 +1,7 @@
-package ru.skillbranch.sbdelivery.utils
+package ru.skillbranch.sbdelivery.util
 
 import android.app.Activity
 import android.content.Context
-import android.net.ConnectivityManager
-import android.net.NetworkCapabilities
-import android.os.Build
 import android.util.TypedValue
 import android.view.View
 import android.view.inputmethod.InputMethodManager
