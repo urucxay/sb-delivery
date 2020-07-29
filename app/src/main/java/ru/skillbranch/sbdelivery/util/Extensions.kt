@@ -1,4 +1,4 @@
-package ru.skillbranch.sbdelivery.utils
+package ru.skillbranch.sbdelivery.util
 
 import android.annotation.SuppressLint
 import android.view.Menu
