@@ -1,4 +1,4 @@
-package ru.skillbranch.sbdelivery.ui.profile
+package ru.skillbranch.sbdelivery.ui.fragment.profile
 
 import androidx.lifecycle.ViewModel
 

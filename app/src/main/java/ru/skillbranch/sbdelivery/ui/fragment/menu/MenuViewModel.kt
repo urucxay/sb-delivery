@@ -1,4 +1,4 @@
-package ru.skillbranch.sbdelivery.ui.menu
+package ru.skillbranch.sbdelivery.ui.fragment.menu
 
 import androidx.lifecycle.ViewModel
 

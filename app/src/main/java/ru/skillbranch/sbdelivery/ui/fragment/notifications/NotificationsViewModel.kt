@@ -1,4 +1,4 @@
-package ru.skillbranch.sbdelivery.ui.notifications
+package ru.skillbranch.sbdelivery.ui.fragment.notifications
 
 import androidx.lifecycle.ViewModel
 

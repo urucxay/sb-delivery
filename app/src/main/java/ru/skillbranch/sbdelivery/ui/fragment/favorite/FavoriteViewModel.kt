@@ -1,4 +1,4 @@
-package ru.skillbranch.sbdelivery.ui.favorite
+package ru.skillbranch.sbdelivery.ui.fragment.favorite
 
 import androidx.lifecycle.ViewModel
 

@@ -1,4 +1,4 @@
-package ru.skillbranch.sbdelivery.ui.orders
+package ru.skillbranch.sbdelivery.ui.fragment.orders
 
 import androidx.lifecycle.ViewModel
 
