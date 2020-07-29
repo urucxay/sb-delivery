@@ -1,4 +1,4 @@
-package ru.skillbranch.sbdelivery.ui.cart
+package ru.skillbranch.sbdelivery.ui.fragment.cart
 
 import androidx.fragment.app.Fragment
 import ru.skillbranch.sbdelivery.R
