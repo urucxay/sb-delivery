@@ -46,7 +46,7 @@ dependencies {
     val kotlin = "1.3.72"
     val constraint = "2.0.0-beta8"
     val liveData = "2.2.0"
-    val material = "1.1.0"
+    val material = "1.3.0-alpha02"
     val navigation = "2.3.0"
     val paging = "2.1.2"
     val coroutines = "1.3.4"
