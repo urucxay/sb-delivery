@@ -51,11 +51,11 @@ dependencies {
     val paging = "2.1.2"
     val coroutines = "1.3.4"
     val glide = "4.11.0"
-    val koin = "2.0.1"
+    val koin = "2.1.6"
     val loggingInterceptor = "4.8.0"
     val retrofit = "2.9.0"
     val moshi = "1.9.3"
-    val preferences = "1.1.1"
+//    val preferences = "1.1.1"
     val room = "2.2.5"
     val timber = "4.7.1"
     val materialDrawer = "8.1.3"
@@ -64,7 +64,7 @@ dependencies {
     //Core
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation("org.jetbrains.kotlin:kotlin-stdlib:$kotlin")
-    implementation("androidx.core:core-ktx:1.3.0")
+    implementation("androidx.core:core-ktx:1.3.1")
     implementation("androidx.appcompat:appcompat:1.1.0")
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
 
@@ -92,17 +92,18 @@ dependencies {
 
     //Glide
     implementation("com.github.bumptech.glide:glide:$glide")
-    kapt("com.github.bumptech.glide:compiler:$glide")
+//    kapt("com.github.bumptech.glide:compiler:$glide")
 
     //Koin
-    implementation("org.koin:koin-java:$koin")
-    implementation("org.koin:koin-test:$koin")
+//    implementation("org.koin:koin-test:$koin")
     implementation("org.koin:koin-android:$koin")
-    implementation("org.koin:koin-androidx-scope:$koin")
+//    implementation("org.koin:koin-androidx-scope:$koin")
     implementation("org.koin:koin-androidx-viewmodel:$koin")
+//    implementation("org.koin:koin-androidx-fragment:$koin")
+//    implementation("org.koin:koin-androidx-ext:$koin")
 
     //Shared Preferences
-    implementation("androidx.preference:preference-ktx:$preferences")
+//    implementation("androidx.preference:preference-ktx:$preferences")
 
     //Room
     implementation("androidx.room:room-runtime:$room")
@@ -114,7 +115,7 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:$retrofit")
     implementation("com.squareup.retrofit2:converter-moshi:$retrofit")
     implementation("com.squareup.moshi:moshi-kotlin:$moshi")
-    kapt("com.squareup.moshi:moshi-kotlin-codegen:$moshi")
+//    kapt("com.squareup.moshi:moshi-kotlin-codegen:$moshi")
 
     //Timber
     implementation("com.jakewharton.timber:timber:$timber")
