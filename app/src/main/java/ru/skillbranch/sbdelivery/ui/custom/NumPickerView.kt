@@ -48,7 +48,7 @@ class NumPickerView @JvmOverloads constructor(
     private val tvCount: TextView
     private val btnPlus: TextView
 
-    var count = 0
+    var count = 1
         private set(value) {
             field = value
             invalidate()
@@ -72,7 +72,7 @@ class NumPickerView @JvmOverloads constructor(
             strokeColor = ColorStateList.valueOf(grayColor)
             //listener
             setOnClickListener {
-                if (count > 0) {
+                if (count > 1) {
                     count--
                     updateCount(count)
                 }
