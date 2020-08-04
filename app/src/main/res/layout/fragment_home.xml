@@ -22,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone"
-            app:constraint_referenced_ids="rvReccomend, tvRecommend, tvReccomendSeeAll"
+            app:constraint_referenced_ids="rvRecommend, tvRecommend, tvReccomendSeeAll"
             tools:visibility="visible" />
 
         <com.google.android.material.imageview.ShapeableImageView
@@ -65,7 +65,7 @@
             app:layout_constraintEnd_toEndOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvReccomend"
+            android:id="@+id/rvRecommend"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -96,7 +96,7 @@
             android:textColor="@color/color_on_primary"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/rvReccomend" />
+            app:layout_constraintTop_toBottomOf="@id/rvRecommend" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tvBestSeeAll"
