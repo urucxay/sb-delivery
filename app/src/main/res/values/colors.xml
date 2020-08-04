@@ -2,8 +2,10 @@
 <resources>
 
     <color name="color_primary">#24222C</color>
+    <color name="color_primary_light">#33313C</color>
     <color name="color_primary_variant">#000000</color>
     <color name="color_on_primary">#FFFFFF</color>
+    <color name="color_on_primary_light">#A6A6B3</color>
     <color name="color_secondary">#FF6F14</color>
 <!--    <color name="color_secondary_variant">#C43E00</color>-->
     <color name="color_secondary_variant">#FEC90D</color>
