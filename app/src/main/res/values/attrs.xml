@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="SvgRatingBar">
+        <attr name="srb_spacing" format="dimension"/>
+        <attr name="srb_icon_width" format="dimension"/>
+        <attr name="srb_icon_height" format="dimension"/>
+    </declare-styleable>
+
+</resources>

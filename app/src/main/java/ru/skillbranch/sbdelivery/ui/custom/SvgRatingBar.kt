@@ -10,8 +10,8 @@ import android.util.AttributeSet
 import android.view.Gravity
 import androidx.appcompat.widget.AppCompatRatingBar
 import ru.skillbranch.sbdelivery.R
-import ru.skillbranch.sbdelivery.util.dpToIntPx
-
+import ru.skillbranch.sbdelivery.util.dpToPx
+import kotlin.math.roundToInt
 
 /**
  * Not working correctly yet. It works only when stepSize = 1 and draws only full star.
@@ -23,20 +23,25 @@ class SvgRatingBar @JvmOverloads constructor(
     defStyleAttr: Int = R.attr.ratingBarStyle
 ) : AppCompatRatingBar(context, attrs, defStyleAttr) {
 
-    private var elementBitmap: Bitmap? = null
-
     //space between stars
-    private val spacing = context.dpToIntPx(25)
+    private var spacing = context.dpToPx(4)
+    //single icon(star) size
+    private var iconWidth = context.dpToPx(18)
+    private var iconHeight = context.dpToPx(18)
 
     init {
+        val attributes =
+            context.obtainStyledAttributes(attrs, R.styleable.SvgRatingBar, defStyleAttr, 0)
+        spacing = attributes.getDimension(R.styleable.SvgRatingBar_srb_spacing, spacing)
+        iconWidth = attributes.getDimension(R.styleable.SvgRatingBar_srb_icon_width, iconWidth)
+        iconHeight = attributes.getDimension(R.styleable.SvgRatingBar_srb_icon_height, iconHeight)
+        attributes.recycle()
         progressDrawable = makeTiledDrawable(progressDrawable, false) as LayerDrawable
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        elementBitmap?.let {
-            val width = it.width * numStars - spacing  //delete last spacing
-            setMeasuredDimension(width, it.height)
-        }
+        val width = (iconWidth + spacing) * numStars - spacing//delete last spacing
+        setMeasuredDimension(width.roundToInt(), iconHeight.toInt())
     }
 
     /**
@@ -72,12 +77,10 @@ class SvgRatingBar @JvmOverloads constructor(
                 return resultDrawable
             }
             is BitmapDrawable -> {
-                val tileBitmap = drawable.bitmap
-                elementBitmap = null ?: tileBitmap
 
                 val shapeDrawable = ShapeDrawable()
                 val bitmapShader = BitmapShader(
-                    tileBitmap,
+                    drawable.bitmap,
                     Shader.TileMode.REPEAT,
                     Shader.TileMode.CLAMP
                 )
@@ -101,12 +104,12 @@ class SvgRatingBar @JvmOverloads constructor(
     //create new bitmapDrawable from drawable
     private fun getBitmapDrawableFromVectorDrawable(drawable: Drawable): BitmapDrawable {
         val bitmap = Bitmap.createBitmap(
-            drawable.intrinsicWidth + spacing,
-            drawable.intrinsicHeight,
+            (iconWidth + spacing).roundToInt(),
+            iconHeight.roundToInt(),
             Bitmap.Config.ARGB_8888
         )
         val canvas = Canvas(bitmap)
-        drawable.setBounds(0, 0, drawable.intrinsicWidth, drawable.intrinsicHeight)
+        drawable.setBounds(0, 0, iconWidth.roundToInt(), iconHeight.roundToInt())
         drawable.draw(canvas)
         return BitmapDrawable(resources, bitmap)
     }
