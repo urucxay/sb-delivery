@@ -11,6 +11,7 @@ import android.util.AttributeSet
 import android.view.Gravity
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.shape.ShapeAppearanceModel
 import ru.skillbranch.sbdelivery.R
@@ -30,11 +31,11 @@ class NumPickerView @JvmOverloads constructor(
     private val borderWidth = context.dpToPx(1).roundToInt()
     private val viewHeight = context.dpToIntPx(44)
     private val buttonWidth = context.dpToIntPx(30)
-    private val textViewWidht = context.dpToIntPx(50)
+    private val textViewWidth = context.dpToIntPx(50)
     private val cornerSize = context.dpToPx(6)
-    private val defaultInset = context.dpToIntPx(6) //can't be set programmaticaly
+    private val defaultInset = context.dpToIntPx(6) //can't be set programmatically
 
-    private val colorPrimary = context.attrValue(R.attr.colorPrimary)
+    private val colorBackground = context.getColor(android.R.color.transparent)
     private val secondaryColor = context.attrValue(R.attr.colorSecondary)
     private val grayColor = context.getColor(R.color.color_gray)
 
@@ -77,6 +78,8 @@ class NumPickerView @JvmOverloads constructor(
                     updateCount(count)
                 }
             }
+            //background
+            setBackgroundColor(colorBackground)
         }
         addView(btnMinus)
 
@@ -85,7 +88,7 @@ class NumPickerView @JvmOverloads constructor(
             textSize = 24f
             setTextColor(secondaryColor)
             gravity = Gravity.CENTER
-            setBackgroundColor(colorPrimary)
+            setBackgroundColor(colorBackground)
         }
         addView(tvCount)
 
@@ -109,17 +112,19 @@ class NumPickerView @JvmOverloads constructor(
                 updateCount(count)
                 Timber.d("count -> $count")
             }
+            //background
+            setBackgroundColor(colorBackground)
         }
         addView(btnPlus)
 
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        val wms = MeasureSpec.makeMeasureSpec(textViewWidht, MeasureSpec.EXACTLY)
+        val wms = MeasureSpec.makeMeasureSpec(textViewWidth, MeasureSpec.EXACTLY)
         val hms = MeasureSpec.makeMeasureSpec(viewHeight, MeasureSpec.EXACTLY)
         tvCount.measure(wms, hms)
 
-        val usedWidth = buttonWidth + textViewWidht + buttonWidth
+        val usedWidth = buttonWidth + textViewWidth + buttonWidth
         setMeasuredDimension(usedWidth, viewHeight)
     }
 
@@ -138,7 +143,7 @@ class NumPickerView @JvmOverloads constructor(
         tvCount.layout(
             left,
             top,
-            left + textViewWidht,
+            left + textViewWidth,
             top + viewHeight
         )
 
