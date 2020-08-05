@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_background"
+        tools:context=".ui.fragment.dish.DishFragment">
+
+        <ImageView
+            android:id="@+id/ivDish"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/dish_image"
+            android:scaleType="centerCrop"
+            android:src="@drawable/test_dish"
+            app:layout_constraintDimensionRatio="1.44"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupPromo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:constraint_referenced_ids="ivPromo, tvPromo"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/ivPromo"
+            android:layout_width="74dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="20dp"
+            android:contentDescription="@string/promotion"
+            android:src="@drawable/bg_promo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvPromo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/promotion"
+            android:textColor="@color/color_black"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivPromo"
+            app:layout_constraintEnd_toEndOf="@+id/ivPromo"
+            app:layout_constraintStart_toStartOf="@+id/ivPromo"
+            app:layout_constraintTop_toTopOf="@+id/ivPromo" />
+
+        <ru.skillbranch.sbdelivery.ui.custom.CheckableImageView
+            android:id="@+id/btnLike"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/ic_like_states"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:text="Пицца Вкуснотитто"
+            android:textColor="@color/color_on_primary"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivDish" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            android:textColor="@color/color_on_primary"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvOldPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="sans-serif-light"
+            android:text="780 ₽"
+            android:textColor="@color/color_on_primary"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDescription"
+            tools:visibility="visible" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="40dp"
+            android:text="680 ₽"
+            android:textColor="@color/color_secondary"
+            android:textSize="24sp"
+            app:layout_constraintStart_toEndOf="@+id/tvOldPrice"
+            app:layout_constraintTop_toBottomOf="@+id/tvDescription" />
+
+        <ru.skillbranch.sbdelivery.ui.custom.NumPickerView
+            android:id="@+id/tvNumPicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvPrice"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvPrice" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAddToCart"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="@color/color_secondary"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:letterSpacing="0"
+            android:text="@string/add_dish_to_cart_button"
+            android:textSize="18sp"
+            app:cornerRadius="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvNumPicker" />
+
+        <View
+            android:id="@+id/bgReview"
+            android:layout_width="0dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/color_primary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnAddToCart" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvReview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Отзывы"
+            android:textColor="@color/color_on_primary"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/bgReview"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/bgReview" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:drawableStart="@drawable/ic_star_filled_small"
+            android:drawablePadding="4dp"
+            android:textColor="@color/color_secondary"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvReview"
+            app:layout_constraintStart_toEndOf="@+id/tvReview"
+            app:layout_constraintTop_toTopOf="@+id/tvReview"
+            tools:text="4.8/5" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnReviewAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="@color/color_primary_light"
+            android:letterSpacing="0"
+            android:text="Добавить отзыв"
+            android:textAllCaps="false"
+            app:cornerRadius="6dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvReview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvReview" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvReviews"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/color_primary"
+            android:paddingStart="6dp"
+            android:paddingEnd="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bgReview"
+            tools:listitem="@layout/review_item_view" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
+
