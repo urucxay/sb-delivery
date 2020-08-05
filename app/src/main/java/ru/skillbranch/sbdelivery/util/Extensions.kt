@@ -61,3 +61,15 @@ fun View.setPaddingOptionally(
 ) {
     setPadding(left, top, right, bottom)
 }
+
+// source format: 2020-08-03T13:47:43.133Z
+fun String.formatApiResponseDate(): String = buildString() {
+    if (this@formatApiResponseDate.length >= 10) {
+        append(this@formatApiResponseDate.substring(8, 10))
+        append(".")
+        append(this@formatApiResponseDate.substring(5, 7))
+        append(".")
+        append(this@formatApiResponseDate.substring(2, 4))
+    }
+}
+
