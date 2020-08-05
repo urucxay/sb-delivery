@@ -9,7 +9,13 @@
         android:id="@+id/homeDestination"
         android:name="ru.skillbranch.sbdelivery.ui.fragment.home.HomeFragment"
         android:label="@string/drawer_title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeDestination_to_dishFragment"
+            app:destination="@id/dishDestination"
+            app:popUpTo="@id/homeDestination"
+            app:popUpToInclusive="false" />
+    </fragment>
 
     <fragment
         android:id="@+id/menuDestination"
@@ -52,5 +58,14 @@
         android:name="ru.skillbranch.sbdelivery.ui.fragment.profile.ProfileFragment"
         android:label="@string/drawer_title_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/dishDestination"
+        android:name="ru.skillbranch.sbdelivery.ui.fragment.dish.DishFragment"
+        android:label="DishFragment"
+        tools:layout="@layout/fragment_dish">
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
 
 </navigation>
