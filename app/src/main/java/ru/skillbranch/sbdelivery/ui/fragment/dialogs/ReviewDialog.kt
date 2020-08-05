@@ -1,4 +1,4 @@
-package ru.skillbranch.sbdelivery.ui.dialogs
+package ru.skillbranch.sbdelivery.ui.fragment.dialogs
 
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -27,9 +27,7 @@ class ReviewDialogFragment : DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        dialog?.requestWindowFeature(Window.FEATURE_NO_TITLE)
-        dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT));
-//        setStyle(DialogFragment.STYLE_NO_FRAME, android.R.style.Theme)
+        dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
         btnReviewClose.setOnClickListener {
             this.dismiss()
@@ -46,16 +44,6 @@ class ReviewDialogFragment : DialogFragment() {
 
         viewModel.rating.observe(viewLifecycleOwner, Observer { setupSendButton(it) })
 
-        if (ratingBar.rating == 0F) {
-            with(btnReviewSend) {
-                isClickable = false
-            }
-        } else {
-            with(btnReviewSend) {
-                isClickable = true
-            }
-        }
-
         //запрещает закрытие диалога при клике за его пределами
         this.isCancelable = false
     }
@@ -64,12 +52,12 @@ class ReviewDialogFragment : DialogFragment() {
         if (rating == 0F) {
             with(btnReviewSend) {
                 isClickable = false
-                backgroundTintList = requireContext().getColorStateList(R.color.color_background)
+                alpha = 0.6F
             }
         } else {
             with(btnReviewSend) {
                 isClickable = true
-                backgroundTintList = requireContext().getColorStateList(R.color.color_secondary)
+                alpha = 1F
             }
         }
     }
@@ -77,9 +65,7 @@ class ReviewDialogFragment : DialogFragment() {
 }
 
 class DialogReviewViewModel : ViewModel() {
-
     val rating = MutableLiveData<Float>(0F)
-
 
     fun handleSendButtonPress() {
         rating.value = 0F
