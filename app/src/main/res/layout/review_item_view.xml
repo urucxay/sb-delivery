@@ -14,7 +14,7 @@
         android:layout_height="wrap_content">
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/materialTextView"
+            android:id="@+id/tvReviewAuthor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -23,9 +23,21 @@
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Екатерина, 19.03.20" />
+            tools:text="Екатерина, " />
 
         <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvReviewDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/color_on_primary"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@id/tvReviewAuthor"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="19.03.20" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvReviewText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-light"
@@ -36,11 +48,12 @@
             android:textColor="@color/color_on_primary_light"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/materialTextView"
+            app:layout_constraintTop_toBottomOf="@+id/tvReviewAuthor"
             app:layout_constraintBottom_toBottomOf="parent"
             tools:text="Великолепная пицца. Мне очень понравилась! \nРекомендую всем!" />
 
         <ru.skillbranch.sbdelivery.ui.custom.SvgRatingBar
+            android:id="@+id/rbReviewRating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -48,8 +61,7 @@
             app:srb_icon_height="12dp"
             app:srb_icon_width="12dp"
             app:srb_spacing="8dp"
-            android:focusable="false"
-            android:focusableInTouchMode="false"
+            android:isIndicator="true"
             tools:numStars="5"
             tools:rating="5"
             android:progressDrawable="@drawable/ic_star_selector"
