@@ -7,17 +7,23 @@ plugins {
 }
 
 android {
-    compileSdkVersion(29)
+    compileSdkVersion(30)
     buildToolsVersion = "29.0.3"
 
     defaultConfig {
         applicationId = "ru.skillbranch.sbdelivery"
         minSdkVersion(23)
-        targetSdkVersion(29)
+        targetSdkVersion(30)
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += ("room.incremental" to "true")
+            }
+        }
     }
 
     buildTypes {
@@ -44,7 +50,7 @@ android {
 dependencies {
     //Versions
     val kotlin = "1.3.72"
-    val constraint = "2.0.0-beta8"
+    val constraint = "2.0.0-rc1"
     val liveData = "2.2.0"
     val material = "1.3.0-alpha02"
     val navigation = "2.3.0"
@@ -115,7 +121,7 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:$retrofit")
     implementation("com.squareup.retrofit2:converter-moshi:$retrofit")
     implementation("com.squareup.moshi:moshi-kotlin:$moshi")
-//    kapt("com.squareup.moshi:moshi-kotlin-codegen:$moshi")
+    kapt("com.squareup.moshi:moshi-kotlin-codegen:$moshi")
 
     //Timber
     implementation("com.jakewharton.timber:timber:$timber")
