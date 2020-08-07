@@ -50,13 +50,15 @@ class NumPickerView @JvmOverloads constructor(
     private val btnPlus: TextView
 
     var count = 1
-        private set(value) {
+        set(value) {
             field = value
             invalidate()
         }
 
     init {
         btnMinus = MaterialButton(context).apply {
+            //id
+            id = R.id.btnMinus
             //text
             text = "-"
             textSize = 24f
@@ -84,15 +86,21 @@ class NumPickerView @JvmOverloads constructor(
         addView(btnMinus)
 
         tvCount = TextView(context).apply {
+            //id
+            id = R.id.tvCount
+            //text
             text = count.toString()
             textSize = 24f
             setTextColor(secondaryColor)
             gravity = Gravity.CENTER
+            //background
             setBackgroundColor(colorBackground)
         }
         addView(tvCount)
 
         btnPlus = MaterialButton(context).apply {
+            //id
+            id = R.id.btnPlus
             //text
             text = "+"
             textSize = 24f
