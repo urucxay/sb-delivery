@@ -7,10 +7,7 @@ import android.view.ViewGroup
 import androidx.annotation.MenuRes
 import androidx.appcompat.view.SupportMenuInflater
 import androidx.appcompat.view.menu.MenuBuilder
-import androidx.core.view.marginBottom
-import androidx.core.view.marginLeft
-import androidx.core.view.marginRight
-import androidx.core.view.marginTop
+import androidx.core.view.*
 import com.mikepenz.materialdrawer.holder.ImageHolder
 import com.mikepenz.materialdrawer.holder.StringHolder
 import com.mikepenz.materialdrawer.model.NavigationDrawerItem
@@ -44,6 +41,23 @@ private fun MaterialDrawerSliderView.addNavigatableMenuItems(mMenu: Menu) {
     }
 }
 
+/**
+ * Set view visibility = VISIBLE
+ */
+fun View.show() {
+    visibility = View.VISIBLE
+}
+
+/**
+ * Set view visibility = GONE
+ */
+fun View.hide() {
+    visibility = View.GONE
+}
+
+/**
+ * Setup custom margin
+ */
 fun View.setMarginOptionally(
     left: Int = marginLeft,
     top: Int = marginTop,
@@ -53,6 +67,9 @@ fun View.setMarginOptionally(
     (layoutParams as ViewGroup.MarginLayoutParams).setMargins(left, top, right, bottom)
 }
 
+/**
+ * Setup custom padding
+ */
 fun View.setPaddingOptionally(
     left: Int = paddingLeft,
     top: Int = paddingTop,
@@ -70,6 +87,21 @@ fun String.formatApiResponseDate(): String = buildString() {
         append(this@formatApiResponseDate.substring(5, 7))
         append(".")
         append(this@formatApiResponseDate.substring(2, 4))
+    }
+}
+
+/**
+ * Click listener that blocking another clicks in app for certain time(default 200ms)
+ */
+private var lastClickTimestamp = 0L
+fun View.setThrottledClickListener(delay: Long = 200L, clickListener: (View) -> Unit) {
+    setOnClickListener {
+        val currentTimestamp = System.currentTimeMillis()
+        val delta = currentTimestamp - lastClickTimestamp
+        if (delta !in 0L..delay) {
+            lastClickTimestamp = currentTimestamp
+            clickListener(this)
+        }
     }
 }
 
