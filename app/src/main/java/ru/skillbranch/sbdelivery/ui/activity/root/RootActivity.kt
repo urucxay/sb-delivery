@@ -1,7 +1,7 @@
 package ru.skillbranch.sbdelivery.ui.activity.root
 
-import android.annotation.SuppressLint
 import android.os.Bundle
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -75,12 +75,11 @@ class RootActivity : BaseActivity<RootViewModel>() {
 
     }
 
-    //override navigeteUp for navController
+    //override navigateUp for navController
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
-    @SuppressLint("RestrictedApi")
     override fun onBackPressed() {
         if (navView.drawerLayout!!.isOpen) {
             navView.drawerLayout?.closeDrawer(navView) //close drawer if it's opened
@@ -126,6 +125,14 @@ class RootActivity : BaseActivity<RootViewModel>() {
 
 
     override fun subscribeOnState(state: IViewModelState) {
+    }
+
+    fun lockDrawerLayout(isLocked: Boolean) {
+        if (isLocked) {
+            navView.drawerLayout?.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
+        } else {
+            navView.drawerLayout?.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
+        }
     }
 
 }
