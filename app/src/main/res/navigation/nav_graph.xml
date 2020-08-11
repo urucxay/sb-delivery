@@ -21,7 +21,11 @@
         android:id="@+id/menuDestination"
         android:name="ru.skillbranch.sbdelivery.ui.fragment.menu.MenuFragment"
         android:label="@string/drawer_title_menu"
-        tools:layout="@layout/fragment_menu" />
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menuDestination_to_searchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/aboutDestination"
@@ -58,6 +62,7 @@
         android:name="ru.skillbranch.sbdelivery.ui.fragment.profile.ProfileFragment"
         android:label="@string/drawer_title_profile"
         tools:layout="@layout/fragment_profile" />
+
     <fragment
         android:id="@+id/dishDestination"
         android:name="ru.skillbranch.sbdelivery.ui.fragment.dish.DishFragment"
@@ -67,5 +72,11 @@
             android:name="id"
             app:argType="string" />
     </fragment>
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="ru.skillbranch.sbdelivery.ui.search.SearchFragment"
+        android:label="@string/search_dish"
+        tools:layout="@layout/fragment_search" />
 
 </navigation>

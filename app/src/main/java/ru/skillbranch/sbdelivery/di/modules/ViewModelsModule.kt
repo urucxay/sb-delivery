@@ -31,4 +31,8 @@ val viewModelsModule = module {
         handle = handle
     ) }
 
+    viewModel { (handle: SavedStateHandle) -> SearchViewModel(
+        handle = handle
+    ) }
+
 }
