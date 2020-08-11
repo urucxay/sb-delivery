@@ -33,7 +33,8 @@ class SearchFragment : BaseFragment<SearchViewModel>() {
 
 
     override fun setupViews() {
-
+        //set locked mode fore drawer layout
+        root.lockDrawerLayout(true)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -64,8 +65,8 @@ class SearchFragment : BaseFragment<SearchViewModel>() {
         searchItem.expandActionView()
         searchView.setQuery(binding.searchQuery, false)
         //restore focus to searchView if need
-        if (binding.isFocusedSearch) searchView.requestFocus()
-        else searchView.clearFocus()
+//        if (binding.isFocusedSearch) searchView.requestFocus()
+//        else searchView.clearFocus()
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {

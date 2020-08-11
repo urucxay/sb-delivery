@@ -50,6 +50,9 @@ abstract class BaseFragment<T : BaseViewModel<out IViewModelState>> : Fragment()
         viewModel.observeNotifications(viewLifecycleOwner) { root.renderNotification(it) }
         viewModel.observeNavigation(viewLifecycleOwner) { root.viewModel.navigate(it) }
 
+        //set default unlocked mode fore drawer layout
+        root.lockDrawerLayout(false)
+
         setupViews()
     }
 
