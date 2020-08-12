@@ -10,12 +10,12 @@ data class Dish(
     @PrimaryKey
     val id: String,
     val name: String,
-    val description: String,
+    val description: String?,
     val image: String,
     @ColumnInfo(name = "old_price")
     val oldPrice: String?,
     val price: Int,
-    val rating: Double,
+    val rating: Float,
     val likes: Int,
     val category: String,
     @ColumnInfo(name = "comments_count")
