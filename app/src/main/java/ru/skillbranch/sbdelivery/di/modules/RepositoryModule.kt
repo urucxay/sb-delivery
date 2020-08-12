@@ -1,13 +1,16 @@
 package ru.skillbranch.sbdelivery.di.modules
 
 import org.koin.dsl.module
-import ru.skillbranch.sbdelivery.repository.DeliveryRepository
+import ru.skillbranch.sbdelivery.repository.DishRepository
 
 val repositoryModule = module {
 
     single {
-        DeliveryRepository(
-            service = get()
+        DishRepository(
+            service = get(),
+            dishDao = get(),
+            reviewDao = get(),
+            prefManager = get()
         )
     }
 

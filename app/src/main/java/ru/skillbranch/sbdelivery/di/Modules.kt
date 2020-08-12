@@ -1,13 +1,11 @@
 package ru.skillbranch.sbdelivery.di
 
-import ru.skillbranch.sbdelivery.di.modules.dbModule
-import ru.skillbranch.sbdelivery.di.modules.networkModule
-import ru.skillbranch.sbdelivery.di.modules.repositoryModule
-import ru.skillbranch.sbdelivery.di.modules.viewModelsModule
+import ru.skillbranch.sbdelivery.di.modules.*
 
 val modulesList = listOf(
     networkModule,
     dbModule,
     viewModelsModule,
-    repositoryModule
+    repositoryModule,
+    prefModule
 )
