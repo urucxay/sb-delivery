@@ -15,6 +15,8 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 import com.mikepenz.materialdrawer.util.ExperimentalNavController
 import com.mikepenz.materialdrawer.widget.MaterialDrawerSliderView
+import java.text.SimpleDateFormat
+import java.util.*
 
 @ExperimentalNavController
 @SuppressLint("RestrictedApi")
@@ -105,3 +107,7 @@ fun View.setThrottledClickListener(delay: Long = 200L, clickListener: (View) -> 
     }
 }
 
+fun Date.format(pattern: String = "EEE, dd MMM yyyy HH:mm:ss z"): String {
+    val dateFormat = SimpleDateFormat(pattern, Locale("en"))
+    return dateFormat.format(this)
+}
