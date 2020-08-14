@@ -1,6 +1,7 @@
 package ru.skillbranch.sbdelivery.db.entitiy
 
 import androidx.room.ColumnInfo
+import androidx.room.DatabaseView
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.util.*
@@ -25,4 +26,21 @@ data class Dish(
     val createdAt: Date,
     @ColumnInfo(name = "updated_at")
     val updatedAt: Date
+)
+
+@DatabaseView(
+    """
+        SELECT id, name, price, image, "0" AS is_favorite, "0" AS is_promo 
+        FROM table_dish
+    """
+)
+data class DishItem(
+    val id: String,
+    val name: String,
+    val price: Int,
+    val image: String,
+    @ColumnInfo(name = "is_favorite")
+    val isFavorite: Boolean,
+    @ColumnInfo(name = "is_promo")
+    val isPromo: Boolean
 )
