@@ -8,10 +8,11 @@ import androidx.room.TypeConverters
 import ru.skillbranch.sbdelivery.db.dao.DishDao
 import ru.skillbranch.sbdelivery.db.dao.ReviewDao
 import ru.skillbranch.sbdelivery.db.entitiy.Dish
+import ru.skillbranch.sbdelivery.db.entitiy.DishItem
 
 const val DB_NAME = "sb_delivery.database"
 
-@Database(entities = [Dish::class], version = 1, exportSchema = false)
+@Database(entities = [Dish::class], version = 1, exportSchema = false, views = [DishItem::class])
 @TypeConverters(Converters::class)
 abstract class DeliveryDB : RoomDatabase() {
 

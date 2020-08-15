@@ -30,7 +30,7 @@ data class Dish(
 
 @DatabaseView(
     """
-        SELECT id, name, price, image, "0" AS is_favorite, "0" AS is_promo 
+        SELECT id, name, price, image, description, old_price, "0" AS is_favorite 
         FROM table_dish
     """
 )
@@ -39,8 +39,9 @@ data class DishItem(
     val name: String,
     val price: Int,
     val image: String,
+    val description: String,
+    @ColumnInfo(name = "old_price")
+    val oldPrice: String?,
     @ColumnInfo(name = "is_favorite")
-    val isFavorite: Boolean,
-    @ColumnInfo(name = "is_promo")
-    val isPromo: Boolean
+    val isFavorite: Boolean
 )

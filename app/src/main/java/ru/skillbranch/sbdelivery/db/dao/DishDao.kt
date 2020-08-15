@@ -22,7 +22,7 @@ interface DishDao {
         """
         SELECT * FROM table_dish
         WHERE category = :category
-    """
+        """
     )
     suspend fun getDishesByCategory(category: String): List<Dish>
 
@@ -44,7 +44,7 @@ interface DishDao {
 
     @Query(
         """
-        SELECT item.id, item.name, item.price, item.image, item.is_favorite, item.is_promo
+        SELECT *
         FROM DishItem AS item
         LEFT JOIN table_dish AS dish ON dish.id = item.id
         WHERE dish.rating >= :rating
@@ -55,7 +55,7 @@ interface DishDao {
 
     @Query(
         """
-        SELECT item.id, item.name, item.price, item.image, item.is_favorite, item.is_promo
+        SELECT *
         FROM DishItem AS item
         LEFT JOIN table_dish AS dish ON dish.id = item.id
         ORDER BY dish.likes DESC LIMIT :limit
