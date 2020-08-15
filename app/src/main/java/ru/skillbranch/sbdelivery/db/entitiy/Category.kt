@@ -15,7 +15,7 @@ data class Category(
     val order: Int,
     val icon: String?,
     @Embedded(prefix = "parent_")
-    val parent: Category?,
+    val parent: String?,
     val active: Boolean,
     @ColumnInfo(name = "created_at")
     val createdAt: Date,
