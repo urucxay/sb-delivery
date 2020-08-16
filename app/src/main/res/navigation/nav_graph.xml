@@ -21,10 +21,10 @@
         android:id="@+id/menuDestination"
         android:name="ru.skillbranch.sbdelivery.ui.fragment.menu.MenuFragment"
         android:label="@string/drawer_title_menu"
-        tools:layout="@layout/fragment_menu" >
+        tools:layout="@layout/fragment_menu">
         <action
             android:id="@+id/action_menuDestination_to_searchFragment"
-            app:destination="@id/searchFragment" />
+            app:destination="@id/searchDestination" />
     </fragment>
 
     <fragment
@@ -71,10 +71,24 @@
         <argument
             android:name="id"
             app:argType="string" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="price"
+            app:argType="string" />
+        <argument
+            android:name="oldPrise"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="description"
+            app:argType="string"
+            app:nullable="true" />
     </fragment>
 
     <fragment
-        android:id="@+id/searchFragment"
+        android:id="@+id/searchDestination"
         android:name="ru.skillbranch.sbdelivery.ui.search.SearchFragment"
         android:label="@string/search_dish"
         tools:layout="@layout/fragment_search" />
