@@ -16,7 +16,7 @@
             android:id="@+id/groupRecommend"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="gone"
+            android:visibility="visible"
             app:constraint_referenced_ids="rvRecommend, tvRecommend, tvRecommendSeeAll"
             tools:visibility="visible" />
 
@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="40dp"
-            android:text="@string/title_reccomend"
+            android:text="@string/title_recommend"
             android:textColor="@color/color_on_primary"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
