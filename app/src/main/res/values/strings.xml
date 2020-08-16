@@ -19,7 +19,7 @@
     <string name="drawer_title_about">О приложении</string>
     <string name="header_background">Фон хэдэра у меню</string>
     <string name="image_with_logo">Изображение с логотипом</string>
-    <string name="title_reccomend">Рекомендуем</string>
+    <string name="title_recommend">Рекомендуем</string>
     <string name="see_all">См. все</string>
     <string name="title_best">Лучшее</string>
     <string name="title_popular">Популярное</string>
@@ -27,4 +27,7 @@
     <string name="price">%s ₽</string>
     <string name="menu_search_title">Search</string>
     <string name="search_dish">Поиск блюд</string>
+    <string name="add_review">Добавить отзыв</string>
+    <string name="reviews">Отзывы</string>
+    <string name="cart">Корзина</string>
 </resources>
