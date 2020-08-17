@@ -16,11 +16,11 @@ class PrefManager(context: Context) {
         preferences.all.clear()
     }
 
-    fun setLastSynchronizationDate(date: String) {
+    fun setLastSyncDate(date: String) {
         lastModified = date
     }
 
-    fun getLastSynchronizationDate(): String = lastModified ?: DEFAULT_DATE
+    fun getLastSyncDate(): String = lastModified ?: DEFAULT_DATE
 
     companion object {
         private const val DEFAULT_DATE = "Wed, 21 Oct 2015 07:28:00 GMT"
