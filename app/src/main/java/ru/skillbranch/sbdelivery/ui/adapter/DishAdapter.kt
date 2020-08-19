@@ -71,4 +71,7 @@ object DishItemCallback : DiffUtil.ItemCallback<DishItem>() {
 
     override fun areContentsTheSame(oldItem: DishItem, newItem: DishItem) =
         oldItem == newItem
+
+    //disable list items blinking.
+    override fun getChangePayload(oldItem: DishItem, newItem: DishItem) = Any()
 }
