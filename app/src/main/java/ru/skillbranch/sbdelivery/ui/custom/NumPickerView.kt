@@ -11,7 +11,6 @@ import android.util.AttributeSet
 import android.view.Gravity
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.core.content.ContextCompat
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.shape.ShapeAppearanceModel
 import ru.skillbranch.sbdelivery.R
@@ -52,7 +51,8 @@ class NumPickerView @JvmOverloads constructor(
     var count = 1
         set(value) {
             field = value
-            invalidate()
+            updateState(value)
+            Timber.d("Count -> $count , tvCount -> ${tvCount.text}")
         }
 
     init {
@@ -77,11 +77,13 @@ class NumPickerView @JvmOverloads constructor(
             setOnClickListener {
                 if (count > 1) {
                     count--
-                    updateCount(count)
+                    updateState(count)
                 }
             }
             //background
             setBackgroundColor(colorBackground)
+
+            isClickable = false
         }
         addView(btnMinus)
 
@@ -117,8 +119,7 @@ class NumPickerView @JvmOverloads constructor(
             strokeColor = ColorStateList.valueOf(grayColor)
             setOnClickListener {
                 count++
-                updateCount(count)
-                Timber.d("count -> $count")
+                updateState(count)
             }
             //background
             setBackgroundColor(colorBackground)
@@ -184,21 +185,24 @@ class NumPickerView @JvmOverloads constructor(
         )
     }
 
-    private fun updateCount(count: Int) {
+    private fun updateState(count: Int) {
         tvCount.text = count.toString()
-//        tvCount.invalidate()
+        tvCount.invalidate()
+        btnMinus.isClickable = count > 1
     }
 
     //region Saving state
     override fun onSaveInstanceState(): Parcelable? {
         val savedState = SavedState(super.onSaveInstanceState())
         savedState.count = count
+        Timber.d("saveState: count -> $count")
         return savedState
     }
 
     override fun onRestoreInstanceState(state: Parcelable?) {
         if (state is SavedState) {
             count = state.count
+            Timber.d("restoreState: count -> $count")
         }
         super.onRestoreInstanceState(state)
     }
