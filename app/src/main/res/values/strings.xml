@@ -30,4 +30,5 @@
     <string name="add_review">Добавить отзыв</string>
     <string name="reviews">Отзывы</string>
     <string name="cart">Корзина</string>
+    <string name="description_category_image">Иконка категории</string>
 </resources>

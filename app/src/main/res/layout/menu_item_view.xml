@@ -24,7 +24,7 @@
             android:layout_marginTop="19dp"
             android:layout_gravity="center_horizontal"
             tools:src="@drawable/ic_menu_promo"
-            android:contentDescription="@string/category_image" />
+            android:contentDescription="@string/description_category_image" />
 
         <TextView
             android:id="@+id/tvCategoryName"
