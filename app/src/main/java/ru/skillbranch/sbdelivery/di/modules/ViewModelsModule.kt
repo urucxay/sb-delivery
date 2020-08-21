@@ -18,7 +18,7 @@ val viewModelsModule = module {
 
     viewModel { (handle: SavedStateHandle) -> HomeViewModel(
         handle = handle,
-        repository = get()
+        dishRepository = get()
     ) }
 
     viewModel { (handle: SavedStateHandle, dishId: String) -> DishViewModel(
@@ -28,7 +28,8 @@ val viewModelsModule = module {
     ) }
 
     viewModel { (handle: SavedStateHandle) -> MenuViewModel(
-        handle = handle
+        handle = handle,
+        categoryRepository = get()
     ) }
 
     viewModel { (handle: SavedStateHandle) -> SearchViewModel(

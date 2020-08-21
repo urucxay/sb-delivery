@@ -9,5 +9,6 @@ val dbModule = module {
     single { DeliveryDB.create(androidContext()) }
 
     single { get<DeliveryDB>().dishDao()}
-    single { get<DeliveryDB>().reviewDao()}
+    single { get<DeliveryDB>().reviewDao() }
+    single { get<DeliveryDB>().favoriteInfoDao() }
 }
