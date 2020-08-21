@@ -83,6 +83,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnReviewSend"
+            style="@style/ButtonStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
@@ -91,7 +92,6 @@
             android:insetBottom="0dp"
             android:letterSpacing="0"
             android:text="@string/send"
-            android:textAllCaps="false"
             android:textSize="18sp"
             app:cornerRadius="6dp"
             app:layout_constraintBottom_toBottomOf="parent"
