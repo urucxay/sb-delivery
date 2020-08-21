@@ -6,13 +6,21 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import ru.skillbranch.sbdelivery.db.dao.DishDao
+import ru.skillbranch.sbdelivery.db.dao.FavoriteInfoDao
 import ru.skillbranch.sbdelivery.db.dao.ReviewDao
+import ru.skillbranch.sbdelivery.db.entitiy.Cart
 import ru.skillbranch.sbdelivery.db.entitiy.Dish
 import ru.skillbranch.sbdelivery.db.entitiy.DishItem
+import ru.skillbranch.sbdelivery.db.entitiy.FavoriteInfo
 
 const val DB_NAME = "sb_delivery.database"
 
-@Database(entities = [Dish::class], version = 1, exportSchema = false, views = [DishItem::class])
+@Database(
+    entities = [Dish::class, FavoriteInfo::class, Cart::class],
+    version = 1,
+    exportSchema = false,
+    views = [DishItem::class]
+)
 @TypeConverters(Converters::class)
 abstract class DeliveryDB : RoomDatabase() {
 
@@ -31,5 +39,6 @@ abstract class DeliveryDB : RoomDatabase() {
 
     abstract fun dishDao(): DishDao
     abstract fun reviewDao(): ReviewDao
+    abstract fun favoriteInfoDao(): FavoriteInfoDao
 
 }
