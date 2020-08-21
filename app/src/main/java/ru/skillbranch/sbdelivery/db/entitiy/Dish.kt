@@ -30,8 +30,9 @@ data class Dish(
 
 @DatabaseView(
     """
-        SELECT id, name, price, image, description, old_price, "0" AS is_favorite 
+        SELECT id, name, price, image, description, old_price, is_favorite, rating, likes
         FROM table_dish
+        LEFT JOIN table_favorite_info ON id = dish_id
     """
 )
 data class DishItem(
@@ -43,5 +44,7 @@ data class DishItem(
     @ColumnInfo(name = "old_price")
     val oldPrice: String?,
     @ColumnInfo(name = "is_favorite")
-    val isFavorite: Boolean
+    val isFavorite: Boolean = false,
+    val rating: Float,
+    val likes: Int
 )
