@@ -1,18 +1,15 @@
 package ru.skillbranch.sbdelivery.ui.fragment.menu
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
-import androidx.appcompat.widget.SearchView
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.GridLayoutManager
 import kotlinx.android.synthetic.main.fragment_menu.*
-import kotlinx.android.synthetic.main.search_view_layout.*
 import org.koin.androidx.viewmodel.ext.android.stateViewModel
 import ru.skillbranch.sbdelivery.R
+import ru.skillbranch.sbdelivery.ui.adapter.AutoFitGridLayoutManager
 import ru.skillbranch.sbdelivery.ui.adapter.CategoryAdapter
 import ru.skillbranch.sbdelivery.ui.base.*
 import ru.skillbranch.sbdelivery.ui.custom.RenderProp
+import ru.skillbranch.sbdelivery.util.dpToIntPx
 
 class MenuFragment : BaseFragment<MenuViewModel>() {
 
@@ -44,31 +41,21 @@ class MenuFragment : BaseFragment<MenuViewModel>() {
 
         with(rvMenu) {
             adapter = categoryAdapter
-            layoutManager =
-                GridLayoutManager(requireContext(), 3, GridLayoutManager.VERTICAL, false)
+            layoutManager = AutoFitGridLayoutManager(requireContext(), context.dpToIntPx(100))
+        }
+        viewModel.categoriesLiveData.observe(viewLifecycleOwner) {
+            categoryAdapter.submitList(it)
         }
 
     }
 
-    inner class MenuBinding : Binding() {
-        var isFocusedSearch: Boolean = false
-        var searchQuery: String? = null
-        var isSearch: Boolean = false
+    class MenuBinding : Binding() {
         var isLoading: Boolean by RenderProp(true) { }
 
         override fun bind(data: IViewModelState) {
             data as MenuState
-//            isSearch = data.isSearch
-//            searchQuery = data.searchQuery
             isLoading = data.isLoading
         }
 
-//        override fun saveUi(outState: Bundle) {
-//            outState.putBoolean(::isFocusedSearch.name, search_view?.hasFocus() ?: false)
-//        }
-//
-//        override fun restoreUi(savedState: Bundle?) {
-//            isFocusedSearch = savedState?.getBoolean(::isFocusedSearch.name) ?: false
-//        }
     }
 }

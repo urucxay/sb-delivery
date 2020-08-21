@@ -1,38 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:backgroundTint="@color/color_primary"
-    app:cardCornerRadius="6dp">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="14dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="100dp"
-        android:layout_height="100dp">
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/color_primary"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:elevation="8dp"
+        app:cardCornerRadius="6dp">
 
         <ImageView
             android:id="@+id/ivCategoryImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            app:layout_constraintBottom_toTopOf="@+id/tvCategoryName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:src="@drawable/ic_menu_promo" />
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="19dp"
+            android:layout_gravity="center_horizontal"
+            tools:src="@drawable/ic_menu_promo"
+            android:contentDescription="@string/category_image" />
 
         <TextView
             android:id="@+id/tvCategoryName"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:layout_marginTop="56dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:lines="2"
+            android:gravity="center"
             android:textColor="@color/color_secondary"
             android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:text="Акции" />
+            tools:text="Бургеры и хот-доги" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</com.google.android.material.card.MaterialCardView>
 
+    </com.google.android.material.card.MaterialCardView>
+</FrameLayout>
