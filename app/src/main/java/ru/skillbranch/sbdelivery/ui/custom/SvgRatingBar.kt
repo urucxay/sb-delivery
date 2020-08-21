@@ -40,7 +40,7 @@ class SvgRatingBar @JvmOverloads constructor(
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        val width = (iconWidth + spacing) * numStars - spacing//delete last spacing
+        val width = (iconWidth + spacing) * numStars - spacing / 2  //delete last spacing
         setMeasuredDimension(width.roundToInt(), iconHeight.toInt())
     }
 
@@ -109,7 +109,12 @@ class SvgRatingBar @JvmOverloads constructor(
             Bitmap.Config.ARGB_8888
         )
         val canvas = Canvas(bitmap)
-        drawable.setBounds(0, 0, iconWidth.roundToInt(), iconHeight.roundToInt())
+        drawable.setBounds(
+            (spacing / 2).toInt(),
+            0,
+            iconWidth.roundToInt() + (spacing / 2).toInt(),
+            iconHeight.roundToInt()
+        )
         drawable.draw(canvas)
         return BitmapDrawable(resources, bitmap)
     }
