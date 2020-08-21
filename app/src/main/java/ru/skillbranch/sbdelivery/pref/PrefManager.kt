@@ -1,16 +1,18 @@
 package ru.skillbranch.sbdelivery.pref
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.preference.PreferenceManager
 
-@SuppressLint("RestrictedApi")
 class PrefManager(context: Context) {
 
     private var lastModified by PrefDelegate(DEFAULT_DATE)
 
-    val preferences: SharedPreferences by lazy { PreferenceManager(context).sharedPreferences }
+    val preferences: SharedPreferences by lazy {
+        PreferenceManager.getDefaultSharedPreferences(
+            context
+        )
+    }
 
     fun clearAll() {
         preferences.all.clear()
