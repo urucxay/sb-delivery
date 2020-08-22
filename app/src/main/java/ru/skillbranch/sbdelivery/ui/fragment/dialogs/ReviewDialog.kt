@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import kotlinx.android.synthetic.main.dialog_review.*
 import ru.skillbranch.sbdelivery.R
@@ -42,10 +41,10 @@ class ReviewDialogFragment : DialogFragment() {
             viewModel.handleRatingChange(rating)
         }
 
-        viewModel.rating.observe(viewLifecycleOwner, Observer { setupSendButton(it) })
+        viewModel.rating.observe(viewLifecycleOwner, { setupSendButton(it) })
 
         //запрещает закрытие диалога при клике за его пределами
-        this.isCancelable = false
+        dialog?.setCanceledOnTouchOutside(false)
     }
 
     private fun setupSendButton(rating: Float) {
@@ -65,7 +64,7 @@ class ReviewDialogFragment : DialogFragment() {
 }
 
 class DialogReviewViewModel : ViewModel() {
-    val rating = MutableLiveData<Float>(0F)
+    val rating = MutableLiveData(0F)
 
     fun handleSendButtonPress() {
         rating.value = 0F
