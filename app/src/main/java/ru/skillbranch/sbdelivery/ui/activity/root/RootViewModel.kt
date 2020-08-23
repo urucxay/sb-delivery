@@ -6,6 +6,7 @@ import kotlinx.coroutines.launch
 import ru.skillbranch.sbdelivery.repository.RootRepository
 import ru.skillbranch.sbdelivery.ui.base.BaseViewModel
 import ru.skillbranch.sbdelivery.ui.base.IViewModelState
+import ru.skillbranch.sbdelivery.ui.base.Notification
 import timber.log.Timber
 
 class RootViewModel(
@@ -20,8 +21,11 @@ class RootViewModel(
     private fun initData() {
         Timber.d("Init RootViewModel Data")
         viewModelScope.launch {
-            repository.synchronizeData(repository.getLastSyncDate())
-            repository.setLastSyncDate()
+            repository.synchronizeData(
+                ifModified = repository.getLastSyncDate(),
+                onSuccess = { repository.setLastSyncDate() },
+                onError = { notify(Notification.TextMessage(it)) }
+            )
             Timber.d("LastUpdateDate - > ${repository.getLastSyncDate()}")
         }
     }

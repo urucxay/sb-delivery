@@ -22,7 +22,11 @@ class RootRepository(
         private const val LAST_PAGE = 12
     }
 
-    suspend fun synchronizeData(ifModified: String) {
+    suspend fun synchronizeData(
+        ifModified: String,
+        onSuccess: () -> Unit,
+        onError: (String) -> Unit
+    ) {
         val scope = CoroutineScope(coroutineContext + Dispatchers.IO)
         //TODO remake it later, current version is for testing
         for (page in 0..LAST_PAGE) {
@@ -37,7 +41,9 @@ class RootRepository(
                         )
                     Timber.d("write to db, page -> $page, item count -> ${response.size}")
                     dishDao.upsert(response.map { it.convertToDish() })
+                    onSuccess()
                 } catch (t: Throwable) {
+                    onError("Something went wrong...")
                     Timber.d("Error $t on page -> $page")
                 }
             }.join()
