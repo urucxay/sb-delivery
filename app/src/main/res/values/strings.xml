@@ -31,4 +31,19 @@
     <string name="reviews">Отзывы</string>
     <string name="cart">Корзина</string>
     <string name="description_category_image">Иконка категории</string>
+    <string name="e_mail">E-mail</string>
+    <string name="password">Пароль</string>
+    <string name="login_error">Некорректный e-mail</string>
+    <string name="login">Войти</string>
+    <string name="register">Регистрация</string>
+    <string name="forgot_password">Забыли пароль?</string>
+    <string name="name">Имя</string>
+    <string name="surname">Фамилия</string>
+    <string name="register2">Зарегистрироваться</string>
+    <string name="login2">Вход</string>
+    <string name="password_restore_info">Введите электронную почту, которую вы использовали при регистрации, и мы вышлем на нее код для восстановления пароля</string>
+    <string name="enter_code">Введите проверочный код</string>
+    <string name="password_repeat">Повторите пароль</string>
+    <string name="save">Сохранить</string>
+    <string name="new_password_info">Введите новый пароль</string>
 </resources>
