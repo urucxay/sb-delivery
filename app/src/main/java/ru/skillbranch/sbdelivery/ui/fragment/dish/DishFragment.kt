@@ -10,7 +10,6 @@ import kotlinx.android.synthetic.main.fragment_dish.*
 import org.koin.androidx.viewmodel.ext.android.stateViewModel
 import org.koin.core.parameter.parametersOf
 import ru.skillbranch.sbdelivery.R
-import ru.skillbranch.sbdelivery.ui.adapter.ReviewAdapter
 import ru.skillbranch.sbdelivery.ui.base.BaseFragment
 import ru.skillbranch.sbdelivery.ui.base.Binding
 import ru.skillbranch.sbdelivery.ui.base.IViewModelState

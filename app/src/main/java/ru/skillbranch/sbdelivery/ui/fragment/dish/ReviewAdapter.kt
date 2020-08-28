@@ -1,5 +1,6 @@
-package ru.skillbranch.sbdelivery.ui.adapter
+package ru.skillbranch.sbdelivery.ui.fragment.dish
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,6 +29,7 @@ class ReviewAdapter : ListAdapter<ReviewResponse, ReviewAdapter.ViewHolder>(Revi
     class ViewHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView),
         LayoutContainer {
 
+        @SuppressLint("SetTextI18n")
         fun bind(review: ReviewResponse) {
             Timber.d("date -> ${review.date}")
             tvReviewAuthor.text = review.author + ", "

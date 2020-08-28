@@ -1,4 +1,4 @@
-package ru.skillbranch.sbdelivery.ui.adapter
+package ru.skillbranch.sbdelivery.ui.fragment.menu
 
 import android.view.LayoutInflater
 import android.view.View

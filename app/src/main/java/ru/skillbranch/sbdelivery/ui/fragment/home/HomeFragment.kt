@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.koin.androidx.viewmodel.ext.android.stateViewModel
 import ru.skillbranch.sbdelivery.R
-import ru.skillbranch.sbdelivery.ui.adapter.DishAdapter
 import ru.skillbranch.sbdelivery.ui.base.BaseFragment
 import ru.skillbranch.sbdelivery.ui.base.MenuItemHolder
 import ru.skillbranch.sbdelivery.ui.base.NavigationCommand

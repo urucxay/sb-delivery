@@ -5,9 +5,8 @@ import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_menu.*
 import org.koin.androidx.viewmodel.ext.android.stateViewModel
 import ru.skillbranch.sbdelivery.R
-import ru.skillbranch.sbdelivery.ui.adapter.AutoFitGridLayoutManager
-import ru.skillbranch.sbdelivery.ui.adapter.CategoryAdapter
 import ru.skillbranch.sbdelivery.ui.base.*
+import ru.skillbranch.sbdelivery.ui.custom.AutoFitGridLayoutManager
 import ru.skillbranch.sbdelivery.ui.custom.GridItemDecorator
 import ru.skillbranch.sbdelivery.ui.custom.RenderProp
 import ru.skillbranch.sbdelivery.util.dpToIntPx
@@ -42,7 +41,8 @@ class MenuFragment : BaseFragment<MenuViewModel>() {
 
         with(rvMenu) {
             adapter = categoryAdapter
-            layoutManager = AutoFitGridLayoutManager(requireContext(), context.dpToIntPx(100))
+            layoutManager =
+                AutoFitGridLayoutManager(requireContext(), context.dpToIntPx(MENU_ITEM_WIDTH_IN_DP))
             addItemDecoration(GridItemDecorator(16))
         }
         viewModel.categoriesLiveData.observe(viewLifecycleOwner) {
@@ -59,5 +59,10 @@ class MenuFragment : BaseFragment<MenuViewModel>() {
             isLoading = data.isLoading
         }
 
+    }
+
+    companion object {
+        //the width of R.layout.menu_item_view in dp
+        private const val MENU_ITEM_WIDTH_IN_DP = 100
     }
 }

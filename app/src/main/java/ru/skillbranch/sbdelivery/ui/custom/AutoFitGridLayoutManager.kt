@@ -1,4 +1,4 @@
-package ru.skillbranch.sbdelivery.ui.adapter
+package ru.skillbranch.sbdelivery.ui.custom
 
 import android.content.Context
 import androidx.recyclerview.widget.GridLayoutManager
