@@ -9,10 +9,10 @@
         android:id="@+id/rvMenu"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingStart="8dp"
-        android:paddingTop="38dp"
-        android:paddingEnd="8dp"
         android:clipToPadding="false"
+        android:paddingStart="16dp"
+        android:paddingTop="38dp"
+        android:paddingEnd="16dp"
         tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         tools:listitem="@layout/menu_item_view"
         tools:spanCount="3" />

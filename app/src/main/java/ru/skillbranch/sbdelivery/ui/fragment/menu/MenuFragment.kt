@@ -8,6 +8,7 @@ import ru.skillbranch.sbdelivery.R
 import ru.skillbranch.sbdelivery.ui.adapter.AutoFitGridLayoutManager
 import ru.skillbranch.sbdelivery.ui.adapter.CategoryAdapter
 import ru.skillbranch.sbdelivery.ui.base.*
+import ru.skillbranch.sbdelivery.ui.custom.GridItemDecorator
 import ru.skillbranch.sbdelivery.ui.custom.RenderProp
 import ru.skillbranch.sbdelivery.util.dpToIntPx
 
@@ -42,6 +43,7 @@ class MenuFragment : BaseFragment<MenuViewModel>() {
         with(rvMenu) {
             adapter = categoryAdapter
             layoutManager = AutoFitGridLayoutManager(requireContext(), context.dpToIntPx(100))
+            addItemDecoration(GridItemDecorator(16))
         }
         viewModel.categoriesLiveData.observe(viewLifecycleOwner) {
             categoryAdapter.submitList(it)

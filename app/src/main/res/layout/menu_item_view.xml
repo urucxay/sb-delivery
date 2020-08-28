@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="14dp">
+    android:layout_height="wrap_content">
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="100dp"
@@ -12,30 +11,30 @@
         android:layout_gravity="center"
         android:backgroundTint="@color/color_primary"
         android:clickable="true"
+        android:elevation="8dp"
         android:focusable="true"
         android:foreground="?android:attr/selectableItemBackground"
-        android:elevation="8dp"
         app:cardCornerRadius="6dp">
 
         <ImageView
             android:id="@+id/ivCategoryImage"
             android:layout_width="28dp"
             android:layout_height="28dp"
-            android:layout_marginTop="19dp"
             android:layout_gravity="center_horizontal"
-            tools:src="@drawable/ic_menu_promo"
-            android:contentDescription="@string/description_category_image" />
+            android:layout_marginTop="19dp"
+            android:contentDescription="@string/description_category_image"
+            tools:src="@drawable/ic_menu_promo" />
 
         <TextView
             android:id="@+id/tvCategoryName"
-            android:layout_width="match_parent"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="56dp"
-            android:layout_marginBottom="4dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginEnd="4dp"
-            android:lines="2"
             android:gravity="center"
+            android:lines="2"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            android:paddingBottom="4dp"
             android:textColor="@color/color_secondary"
             android:textSize="14sp"
             tools:text="Бургеры и хот-доги" />
