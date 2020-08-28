@@ -49,22 +49,22 @@ android {
 
 dependencies {
     //Versions
-    val kotlin = "1.3.72"
-    val constraint = "2.0.0-rc1"
+    val kotlin = "1.4.0"
+    val constraint = "2.0.0"
     val liveData = "2.2.0"
     val material = "1.3.0-alpha02"
     val navigation = "2.3.0"
     val paging = "2.1.2"
-    val coroutines = "1.3.4"
+    val coroutines = "1.3.9"
     val glide = "4.11.0"
     val koin = "2.1.6"
-    val loggingInterceptor = "4.8.0"
+    val loggingInterceptor = "4.8.1"
     val retrofit = "2.9.0"
     val moshi = "1.9.3"
     val preferences = "1.1.1"
     val room = "2.2.5"
     val timber = "4.7.1"
-    val materialDrawer = "8.1.3"
+    val materialDrawer = "8.1.5"
     val annotation = "1.1.0"
 
     //Core
@@ -134,6 +134,6 @@ dependencies {
 
     //Test
     testImplementation("junit:junit:4.13")
-    androidTestImplementation("androidx.test.ext:junit:1.1.1")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.2.0")
+    androidTestImplementation("androidx.test.ext:junit:1.1.2")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.3.0")
 }
